@@ -3,6 +3,7 @@ package com.learnJava.parallelStream;
 import java.util.function.Supplier;
 import java.util.stream.IntStream;
 
+// Parallel streams should not be used when we need to perform some operation on boxed objects or on objects which is mutating some variable value.
 public class ParallelStreamExample {
 
     private static long checkPerformanceResult(Supplier<Integer> integerSupplier, int noOfTimes){

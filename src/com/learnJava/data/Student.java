@@ -1,7 +1,9 @@
 package com.learnJava.data;
 
+import javax.crypto.spec.OAEPParameterSpec;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class Student {
     private String name;
@@ -9,6 +11,28 @@ public class Student {
     private String gender;
     private double gpa;
     private int notebooks;
+    private Optional<Bike> bike = Optional.empty();
+
+    public Optional<Bike> getBike() {
+        return bike;
+    }
+
+    public void setBike(Optional<Bike> bike) {
+        this.bike = bike;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", gradLevel=" + gradLevel +
+                ", gender='" + gender + '\'' +
+                ", gpa=" + gpa +
+                ", notebooks=" + notebooks +
+                ", bike=" + bike +
+                ", activities=" + activities +
+                '}';
+    }
 
     public Student(String name, int gradLevel, String gender, double gpa, int notebooks, List<String> activities) {
         this.name = name;
@@ -87,17 +111,6 @@ public class Student {
 
     public void setActivities(List<String> activities) {
         this.activities = activities;
-    }
-
-    @Override
-    public String toString() {
-        return "Student{" +
-                "name='" + name + '\'' +
-                ", gradLevel=" + gradLevel +
-                ", gender='" + gender + '\'' +
-                ", gpa=" + gpa +
-                ", activities=" + activities +
-                '}';
     }
 
 }
